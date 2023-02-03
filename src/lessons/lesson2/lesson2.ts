@@ -24,6 +24,7 @@ console.log('lesson 2');
 // Task 01
 // Реализовать функцию sum которая суммирует 2 числа следующим образом sum(3)(6) === 9
 
+// const sum = (a: number) => (b: number) => a + b
 
 
 // Task 02
@@ -35,6 +36,12 @@ console.log('lesson 2');
 // counter2(); // 1
 // counter(); // 3
 
+// const makeCounter = () => {
+//     let a = 1;
+//     return () => a++
+// }
+
+
 // Task 03
 // Переписать функцию из Task 02 так, что бы она принимала число в качестве аргумента и это число было стартовым значением счетчика
 // и возвращала следующий объект методов:
@@ -42,6 +49,25 @@ console.log('lesson 2');
 // decrease: -1
 // reset: установить счетчик в 0;
 // set: установить счетчик в заданное значение;
+
+// const makeCounter = () => {
+//     let b = 1
+//     return{
+//             increase(){
+//                 return  b++
+//             },
+//             decrease(){
+//                 return  b--
+//             },
+//             reset(){
+//                return  b = 0
+//             },
+//             set(){
+//                 return  b = a
+//             }
+//         }
+// }
+
 
 // Task 04*
 // Реализовать функцию superSum которая принимает число в качестве аргумента, которое указывает на количество слагаемых
@@ -53,13 +79,91 @@ console.log('lesson 2');
 // 5) superSum(3)(2,5)(3) //10
 // 6) superSum(3)(2,5)(3,9) //10
 
+// function superSum(n: number) {
+//     if (n === 0) {
+//         return 0
+//     }
+//     if (n === 1) {
+//         return (num: number) => num
+//     }
+//     let num: number[] = []
+//     function curry(...args: number[]) {
+//         num = [...num, ...args]
+//         if(num.length >= n) {
+//             num.length = n
+//             return num.reduce((a, b) => a + b)
+//         } else {
+//             return curry
+//         }
+//     }
+//     return curry
+// }
 // P.S. типизируйте только аргументы, а при вызове функции используйте @ts-ignore
 
 // Task 05
 // решить все задачи по рекурсии которые даны в конце статьи https://learn.javascript.ru/recursion
 
+//1:
+// function fun(n: number){
+//     if(n === 1) {
+//         return 1
+//     }
+//     return n + fun(n-1)
+// }
+//2:
+// function factorial(n: number){
+//     if(n) {
+//     return n * factorial(n-1)
+//     }else{
+//         return 1
+//     }
+// }
+//3:
+// function fib(n: number) {
+//     let a = 1;
+//     let b = 1;
+//     for (let i = 3; i <= n; i++) {
+//         let c = a + b;
+//         a = b;
+//         b = c;
+//     }
+//     return b;
+// }
+//4:
+// function printList(list: any) {
+//
+//     console.log(list.value);
+//
+//     if (list.next) {
+//         printList(list.next);
+//
+//     }}
+//5:
+// function printReverseList(l) {
+//     if (l.next) {
+//         printReverseList(l.next);
+//     }
+//     console.log(l.value);
+// }
+
 // Task 06
 // написать функцию, которая повторяет функционал метода flat массива на всю глубину.
 
+// function flat(input: any) {
+//     const stack = [...input];
+//     const res = [];
+//     while (stack.length) {
+//         const next = stack.pop();
+//         if (Array.isArray(next)) {
+//             stack.push(...next);
+//         } else {
+//             res.push(next);
+//         }
+//     }
+//     return res.reverse();
+// }
+
+
 // just a plug
-export default () => {};
+export default () => {
+};

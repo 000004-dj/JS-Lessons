@@ -20,7 +20,7 @@ const CurrencyEContainer: React.FC = ()=> {
         if (currency.currencyName === value.currentCurrency) {
             currencyRate = value.isBuying ? currency.buyRate : currency.sellRate;
         }
-        debugger
+
         return currency.currencyName;
     });
 

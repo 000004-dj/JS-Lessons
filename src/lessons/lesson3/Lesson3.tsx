@@ -1,6 +1,9 @@
 import React, {useState} from 'react';
 import API from './API';
 import './lesson_3';
+import Lesson1 from "../lesson1/lesson1";
+import axios from "axios";
+import {log} from "util";
 
 type FilmsType = {
     Title: string,
@@ -36,6 +39,7 @@ const Lesson3 = () => {
 
     }
 
+
     return (
         <div>
             <h1>Promises</h1>
@@ -49,7 +53,6 @@ const Lesson3 = () => {
                     </ul>
                 </div>
             </div>
-
             <div>
                 <h3><p>Search by type:</p></h3>
                 <input type="text" value={searchNameByType}
